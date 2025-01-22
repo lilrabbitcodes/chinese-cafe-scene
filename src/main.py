@@ -6,15 +6,11 @@ import base64
 import requests
 from streamlit.components.v1 import html
 import streamlit.components.v1 as components
-from dotenv import load_dotenv
 
-# Load environment variables
-load_dotenv()
-
-# Get API key from environment variable
-api_key = os.getenv("OPENAI_API_KEY")
+# Get API key from Streamlit secrets
+api_key = st.secrets["OPENAI_API_KEY"]
 if not api_key:
-    st.error("❌ No OpenAI API key found. Please check your .env file.")
+    st.error("❌ No OpenAI API key found. Please check your Streamlit secrets.")
     st.stop()
 
 # Initialize OpenAI client with API key
