@@ -7,44 +7,6 @@ import requests
 from streamlit.components.v1 import html
 import streamlit.components.v1 as components
 
-# Update the header styling
-st.markdown("""
-    <div style="text-align: center; padding: 15px 0;">
-        <h1 style="
-            color: #ff9a9e; 
-            font-family: 'Helvetica Neue', sans-serif; 
-            margin: 0;
-            font-size: 24px;
-            font-weight: 500;
-            ">
-            ☕ Serena's Chinese Café
-        </h1>
-        <p style="
-            color: #666; 
-            font-size: 14px; 
-            margin: 5px 0;
-            font-weight: 300;
-            ">
-            Learn Chinese with your friendly café companion
-        </p>
-    </div>
-    <style>
-        /* Add some spacing after the header */
-        div.stChatMessage:first-of-type {
-            margin-top: 15px;
-        }
-        
-        /* Make the header stick to top while scrolling */
-        div.element-container:first-child {
-            position: sticky;
-            top: 0;
-            background: rgba(255, 255, 255, 0.95);
-            z-index: 100;
-            border-bottom: 1px solid #f0f0f0;
-        }
-    </style>
-""", unsafe_allow_html=True)
-
 # Get API key from Streamlit secrets
 api_key = st.secrets["OPENAI_API_KEY"]
 if not api_key:
@@ -310,7 +272,7 @@ What would you like to say to the waiter?
 Option 1: 我要一杯拿铁 (I want a latte)
 Option 2: 我要一杯美式咖啡 (I want an Americano)"""
 
-# Initialize session state for user info (keep this part)
+# Initialize session state with user info
 if "user_info" not in st.session_state:
     st.session_state.user_info = {
         "name": None,
