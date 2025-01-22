@@ -7,20 +7,40 @@ import requests
 from streamlit.components.v1 import html
 import streamlit.components.v1 as components
 
-# Add this near the top of the file, after the imports and before the API key setup
+# Update the header styling
 st.markdown("""
-    <div style="text-align: center; padding: 20px 0; background: linear-gradient(to right, #ff9a9e, #fad0c4);">
-        <h1 style="color: white; font-family: 'Helvetica Neue', sans-serif; margin: 0;">
+    <div style="text-align: center; padding: 15px 0;">
+        <h1 style="
+            color: #ff9a9e; 
+            font-family: 'Helvetica Neue', sans-serif; 
+            margin: 0;
+            font-size: 24px;
+            font-weight: 500;
+            ">
             ☕ Serena's Chinese Café
         </h1>
-        <p style="color: white; font-size: 1.1em; margin: 10px 0;">
+        <p style="
+            color: #666; 
+            font-size: 14px; 
+            margin: 5px 0;
+            font-weight: 300;
+            ">
             Learn Chinese with your friendly café companion
         </p>
     </div>
     <style>
         /* Add some spacing after the header */
         div.stChatMessage:first-of-type {
-            margin-top: 20px;
+            margin-top: 15px;
+        }
+        
+        /* Make the header stick to top while scrolling */
+        div.element-container:first-child {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.95);
+            z-index: 100;
+            border-bottom: 1px solid #f0f0f0;
         }
     </style>
 """, unsafe_allow_html=True)
